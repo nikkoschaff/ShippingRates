@@ -1,0 +1,25 @@
+<%= form_for :rate, url: rates_path do |f| %>
+    <div class="field">
+        <%= f.text_field :weight, :placeholder => "Weight" %>
+    </div>
+
+    <div class="field">
+        <%= f.text_field :country, :placeholder => "Country" %>
+    </div>
+
+    <div class="field">
+        <%= f.text_field :state, :placeholder => "State" %>
+    </div>
+
+    <div class="field">
+        <%= f.text_field :city, :placeholder => "City" %>
+    </div>
+
+    <div class="field">
+        <%= f.text_field :zip, :placeholder => "Zip" %>
+    </div>
+
+    <div class="action">
+        <%= f.submit %>
+    </div>
+<% end %>

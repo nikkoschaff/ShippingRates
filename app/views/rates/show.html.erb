@@ -1,0 +1,46 @@
+<H1>Package Info</H1>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @rate.weight %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @rate.country %>
+</p>
+ 
+<p>
+  <strong>State:</strong>
+  <%= @rate.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @rate.city %>
+</p>
+
+<p>
+  <strong>Zip Code:</strong>
+  <%= @rate.zip %>
+</p>
+
+<h1>Shipping Rates</h1>
+
+<p>
+  <strong>UPS:</strong> $
+  <%= @upsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]} %>
+</p>
+
+
+<!-- <p>
+  <strong>FedEx:</strong> $
+  <%#= @fedexRate %>
+</p>
+
+
+<p>
+  <strong>USPS:</strong> $
+  <%#= @uspsRate %>
+</p> -->
+
