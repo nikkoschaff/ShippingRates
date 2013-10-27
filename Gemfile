@@ -32,6 +32,7 @@ group :doc do
 end
 
 gem 'active_shipping'
+gem 'country_select'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
