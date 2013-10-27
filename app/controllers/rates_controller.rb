@@ -12,8 +12,12 @@ class RatesController < ApplicationController
   def create
   	@rate = Rate.new(post_params)
  
-  	@rate.save
-  	redirect_to @rate
+
+ 	if 	@rate.save
+  		redirect_to @rate
+  	else
+  		render '/'
+  	end
   end
 
   def show

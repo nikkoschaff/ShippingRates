@@ -11,6 +11,9 @@
         <%#= f.text_field :country, :placeholder => "Country" %>
     </div>
 
+    <br />
+    <p>The following fields only apply to US destinations</p>
+
     <div class="field">
         <%= f.select :state, options_for_select(us_states) %>
     </div>

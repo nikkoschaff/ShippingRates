@@ -2,7 +2,7 @@
 
 <p>
   <strong>Weight:</strong>
-  <%= @rate.weight %>
+  <%= @rate.weight %> ounces
 </p>
 
 <p>
@@ -10,20 +10,26 @@
   <%= @rate.country %>
 </p>
  
-<p>
-  <strong>State:</strong>
-  <%= @rate.state %>
-</p>
+ <% if @rate.country == "United States" %>
+	<p>
+	  <strong>State:</strong>
+	  <%= @rate.state %>
+	</p>
+<% end %>
 
-<p>
-  <strong>City:</strong>
-  <%= @rate.city %>
-</p>
+<% unless @rate.city == "" %>
+	<p>
+	  <strong>City:</strong>
+	  <%= @rate.city %>
+	</p>
+<% end %>
 
-<p>
-  <strong>Zip Code:</strong>
-  <%= @rate.zip %>
-</p>
+<% if @rate.country == "United States" %>
+	<p>
+	  <strong>Zip Code:</strong>
+	  <%= @rate.zip %>
+	</p>
+<% end %>
 
 <h1>Shipping Rates</h1>
 
