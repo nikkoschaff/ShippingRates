@@ -39,23 +39,25 @@
   <% upsRates.each do |rate| %>
   	<%= rate.service_name %>: $<%= rate.price / 100.0 %>
   	<br />
-
   <% end %>
 </p>
 
-<!-- <p>
-  <strong>FedEx:</strong> $
-  <%#= @fedexRate %>
+ <p>
+  <strong>FedEx:</strong><br />
+  <% fedexRates = @fedexResponse.rates.sort_by(&:price).collect %>
+  <% fedexRates.each do |rate| %>
+    <%= rate.service_name %>: $<%= rate.price / 100.0 %>
+    <br />
+  <% end %>
 </p>
--->
+
 
 <p>
   <strong>USPS:</strong><br />
-    <% uspsRates = @uspsResponse.rates.sort_by(&:price).collect %>
+  <% uspsRates = @uspsResponse.rates.sort_by(&:price).collect %>
   <% uspsRates.each do |rate| %>
   	<%= rate.service_name %>: $<%= rate.price / 100.0 %>
   	<br />
-
   <% end %>
 </p> 
 

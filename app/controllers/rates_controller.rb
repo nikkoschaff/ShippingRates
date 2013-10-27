@@ -39,9 +39,9 @@ class RatesController < ApplicationController
 	@upsResponse = ups.find_rates(@origin, @destination, @packages)
 
 	# #FEDEX
-	# pass? Og9RdpcHV3S0NVeV
-	# fedex = FedEx.new(:login => '118588852', :password => 'Og9RdpcHV3S0NVeV', key: 'UYBcUZO6CYbTmSObvl7Mtumsu', account: '510087160')
-	# @fedexResponse = fedex.find_rates(@origin, @destination, @packages)
+	# key Og9RdpcHV3S0NVeV
+	fedex = FedEx.new(:login => '118588852', :password => 'vsLFxEkmsPENTN5Rq9Omc4oym', key: 'Og9RdpcHV3S0NVeV', account: '510087160', test: true)
+	@fedexResponse = fedex.find_rates(@origin, @destination, @packages)
 
 	# #USPS
 	 usps = USPS.new(:login => '012MASSD7511')
