@@ -37,10 +37,10 @@
   <strong>FedEx:</strong> $
   <%#= @fedexRate %>
 </p>
-
+-->
 
 <p>
   <strong>USPS:</strong> $
-  <%#= @uspsRate %>
-</p> -->
+  <%= @uspsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}  %>
+</p> 
 

@@ -37,14 +37,15 @@ class RatesController < ApplicationController
 	#ups_rates = upsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
 	# #FEDEX
-	# fedex = FedEx.new(:login => '999999999', :password => '7777777', key: '1BXXXXXXXXXxrcB', account: '51XXXXX20')
+	# fedex = FedEx.new(:login => 'massdroptest', :password => 'Mansion92', key: 'UYBcUZO6CYbTmSObvl7Mtumsu', account: '510087160')
+	# pass UYBcUZO6CYbTmSObvl7Mtumsu / Og9RdpcHV3S0NVeV
 	# @fedexResponse = fedex.find_rates(@origin, @destination, @packages)
 	# fexex_rates = fedexResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
 	# #USPS
-	# usps = USPS.new(:login => 'developer-key')
-	# @uspsResponse = usps.find_rates(@origin, @destination, @packages)
-	# usps_rates = uspsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
+	 usps = USPS.new(:login => '012MASSD7511')
+	 @uspsResponse = usps.find_rates(@origin, @destination, @packages)
+	 usps_rates = @uspsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
 
   end
