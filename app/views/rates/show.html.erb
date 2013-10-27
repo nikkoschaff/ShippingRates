@@ -31,7 +31,7 @@
   <strong>UPS:</strong><br />
   <% upsRates = @upsResponse.rates.sort_by(&:price).collect %>
   <% upsRates.each do |rate| %>
-  	<%= rate.service_name %>: <%= rate.price / 100.0 %>
+  	<%= rate.service_name %>: $<%= rate.price / 100.0 %>
   	<br />
 
   <% end %>
@@ -48,7 +48,7 @@
   <strong>USPS:</strong><br />
     <% uspsRates = @uspsResponse.rates.sort_by(&:price).collect %>
   <% uspsRates.each do |rate| %>
-  	<%= rate.service_name %>: <%= rate.price / 100.0 %>
+  	<%= rate.service_name %>: $<%= rate.price / 100.0 %>
   	<br />
 
   <% end %>
