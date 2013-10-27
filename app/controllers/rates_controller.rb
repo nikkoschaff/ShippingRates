@@ -6,7 +6,7 @@ class RatesController < ApplicationController
   end
 
   def new
-
+  	@rate = Rate.new
   end
 
   def create
@@ -16,7 +16,7 @@ class RatesController < ApplicationController
  	if 	@rate.save
   		redirect_to @rate
   	else
-  		render '/'
+  		render "new"
   	end
   end
 
@@ -41,9 +41,10 @@ class RatesController < ApplicationController
 	#ups_rates = upsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
 	# #FEDEX
-	# fedex = FedEx.new(:login => 'massdroptest', :password => 'Mansion92', key: 'UYBcUZO6CYbTmSObvl7Mtumsu', account: '510087160')
-	# pass UYBcUZO6CYbTmSObvl7Mtumsu / Og9RdpcHV3S0NVeV
+	# fedex = FedEx.new(:login => 'massdroptest', :password => 'Mansion92', key: 'Va9bTNUMedCe9FdNVbtnBFwck', account: '510087160', meter: '118588852')
+	# pass UYBcUZO6CYbTmSObvl7Mtumsu / Va9bTNUMedCe9FdNVbtnBFwck / Og9RdpcHV3S0NVeV
 	# account 510087160
+	# meter 118588852
 	# @fedexResponse = fedex.find_rates(@origin, @destination, @packages)
 	# fexex_rates = fedexResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
