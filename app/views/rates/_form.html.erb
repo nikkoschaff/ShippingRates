@@ -1,6 +1,9 @@
 <%= form_for :rate, url: rates_path do |f| %>
+
+
+
     <div class="field">
-        <%= f.text_field :weight, :placeholder => "Weight" %>
+        <%= f.text_field :weight, :placeholder => "Weight (ounces)" %>
     </div>
 
     <div class="field">
@@ -20,6 +23,6 @@
     </div>
 
     <div class="action">
-        <%= f.submit %>
+        <%= f.submit "Find rates" %>
     </div>
 <% end %>
