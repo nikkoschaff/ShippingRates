@@ -8,7 +8,8 @@ development:
   encoding: unicode
   database: myapp_development
   pool: 5
-  #password:
+  username: wjs2
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -18,9 +19,13 @@ test:
   encoding: unicode
   database: myapp_test
   pool: 5
+  username: wjs2
+  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: myapp_production
   pool: 5
+  username: wjs2
+  password:
