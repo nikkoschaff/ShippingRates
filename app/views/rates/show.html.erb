@@ -1,64 +1,82 @@
 <H1>Package Info</H1>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @rate.weight %> ounces
-</p>
+<ul>
+  <li>
+  <p>
+    <strong>Weight:</strong>
+    <%= pluralize(@rate.weight, "ounce") %> 
+  </p>
+  </li>
 
-<p>
-  <strong>Country:</strong>
-  <%= @rate.country %>
-</p>
- 
- <% if @rate.country == "United States" %>
-	<p>
-	  <strong>State:</strong>
-	  <%= @rate.state %>
-	</p>
-<% end %>
+  <li>
+  <p>
+    <strong>Country:</strong>
+    <%= @rate.country %>
+  </p>
+  </li>
+   
+  <% if @rate.country == "United States" %>
+    <li>
+  	<p>
+  	  <strong>State:</strong>
+  	  <%= @rate.state %>
+  	</p>
+    </li>
+  <% end %>
 
-<% unless @rate.city == "" %>
-	<p>
-	  <strong>City:</strong>
-	  <%= @rate.city %>
-	</p>
-<% end %>
+  <% unless @rate.city == "" %>
+    <li>
+  	<p>
+  	  <strong>City:</strong>
+  	  <%= @rate.city %>
+  	</p>
+    </li>
+  <% end %>
 
-<% if @rate.country == "United States" %>
-	<p>
-	  <strong>Zip Code:</strong>
-	  <%= @rate.zip %>
-	</p>
-<% end %>
+  <% if @rate.country == "United States" %>
+    <li>
+  	<p>
+  	  <strong>Zip Code:</strong>
+  	  <%= @rate.zip %>
+  	</p>
+    </li>
+  <% end %>
+</ul>
 
 <h1>Shipping Rates</h1>
 
 <p>
   <strong>UPS:</strong><br />
-  <% upsRates = @upsResponse.rates.sort_by(&:price).collect %>
-  <% upsRates.each do |rate| %>
-  	<%= rate.service_name %>: $<%= rate.price / 100.0 %>
-  	<br />
-  <% end %>
+  <ul>
+    <% upsRates = @upsResponse.rates.sort_by(&:price).collect %>
+    <% upsRates.each do |rate| %>
+    	<li><%= rate.service_name %>: $<%= rate.price / 100.0 %></li>
+    	<br />
+    <% end %>
+  </ul>
 </p>
 
  <p>
   <strong>FedEx:</strong><br />
-  <% fedexRates = @fedexResponse.rates.sort_by(&:price).collect %>
-  <% fedexRates.each do |rate| %>
-    <%= rate.service_name %>: $<%= rate.price / 100.0 %>
-    <br />
-  <% end %>
+  <ul>
+    <% fedexRates = @fedexResponse.rates.sort_by(&:price).collect %>
+    <% fedexRates.each do |rate| %>
+      <li><%= rate.service_name %>: $<%= rate.price / 100.0 %></li>
+      <br />
+    <% end %>
+  </ul>
 </p>
 
 
 <p>
   <strong>USPS:</strong><br />
-  <% uspsRates = @uspsResponse.rates.sort_by(&:price).collect %>
-  <% uspsRates.each do |rate| %>
-  	<%= rate.service_name %>: $<%= rate.price / 100.0 %>
-  	<br />
-  <% end %>
+  <ul>
+    <% uspsRates = @uspsResponse.rates.sort_by(&:price).collect %>
+    <% uspsRates.each do |rate| %>
+    	<li><%= rate.service_name %>: $<%= rate.price / 100.0 %></li>
+    	<br />
+    <% end %>
+  </ul>
 </p> 
 
 
