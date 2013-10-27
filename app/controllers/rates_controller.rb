@@ -11,7 +11,6 @@ class RatesController < ApplicationController
 
   def create
   	@rate = Rate.new(post_params)
- 
 
  	if 	@rate.save
   		redirect_to @rate
@@ -38,21 +37,15 @@ class RatesController < ApplicationController
 	#UPS
 	ups = UPS.new(:login => 'massdroptest', :password => 'mansion92', :key => '8CC2BEE7ED40B8D5')
 	@upsResponse = ups.find_rates(@origin, @destination, @packages)
-	#ups_rates = upsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
 	# #FEDEX
-	# fedex = FedEx.new(:login => 'massdroptest', :password => 'Mansion92', key: 'Va9bTNUMedCe9FdNVbtnBFwck', account: '510087160', meter: '118588852')
-	# pass UYBcUZO6CYbTmSObvl7Mtumsu / Va9bTNUMedCe9FdNVbtnBFwck / Og9RdpcHV3S0NVeV
-	# account 510087160
-	# meter 118588852
+	# pass? Og9RdpcHV3S0NVeV
+	# fedex = FedEx.new(:login => '118588852', :password => 'Og9RdpcHV3S0NVeV', key: 'UYBcUZO6CYbTmSObvl7Mtumsu', account: '510087160')
 	# @fedexResponse = fedex.find_rates(@origin, @destination, @packages)
-	# fexex_rates = fedexResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
 
 	# #USPS
 	 usps = USPS.new(:login => '012MASSD7511')
 	 @uspsResponse = usps.find_rates(@origin, @destination, @packages)
-	 usps_rates = @uspsResponse.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
-
 
   end
 

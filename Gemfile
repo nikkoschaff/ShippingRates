@@ -33,6 +33,7 @@ end
 
 gem 'active_shipping'
 gem 'country_select'
+gem 'zip-code-info'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
